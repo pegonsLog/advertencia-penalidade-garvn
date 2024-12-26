@@ -1,0 +1,117 @@
+@media print {
+  body {
+    margin: 0;
+    box-shadow: 0;
+    font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+
+  }
+
+
+  .page {
+    box-shadow: none;
+    margin: 0;
+    page-break-after: always;
+  }
+
+  button {
+    display: none;
+  }
+}
+
+.page {
+  width: 21cm;
+  height: 29.7cm;
+  padding-top: -5px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background: white;
+  page-break-after: always;
+}
+
+h1, h2, h3, h4, h5{
+  font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+
+footer{
+display: inline-block;
+justify-items: center;
+}
+
+section{
+  margin-bottom: 10px;
+}
+
+h3{
+  margin-bottom: 1px;
+}
+
+.centralizar{
+  width: 100%;
+display: flex;
+justify-content: center;
+margin: 0 auto;
+font-size: 10px;
+}
+
+.rounded-square {
+  width: 10px;
+  height: 10px;
+  border-radius: 1px;
+  border: 1px solid gray;
+  margin-left: 6px;
+  padding: 0px 7px ;
+}
+
+.watermark-sumob-1via {
+  position: fixed;
+  top: 19%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-40deg);
+  font-size: 3rem; /* Ajuste o tamanho do texto conforme necessário */
+  font-weight: 800;
+  color: transparent; /* Cor e opacidade da marca d'água */
+  -webkit-text-stroke: 1px rgba(128, 128, 128, 0.5);
+  z-index: 9999; /* Coloca a marca d'água atrás de outros conteúdos */
+  pointer-events: none; /* Faz com que a marca d'água não seja clicável */
+  user-select: none; /* Evita que o texto da marca d'água seja selecionável */
+}
+.watermark-bhtrans-1via {
+  position: fixed;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-40deg);
+  font-size: 3rem; /* Ajuste o tamanho do texto conforme necessário */
+  font-weight: 800;
+  color: transparent; /* Cor e opacidade da marca d'água */
+  -webkit-text-stroke: 1px rgba(128, 128, 128, 0.5);
+  z-index: 9999; /* Coloca a marca d'água atrás de outros conteúdos */
+  pointer-events: none; /* Faz com que a marca d'água não seja clicável */
+  user-select: none; /* Evita que o texto da marca d'água seja selecionável */
+}
+.watermark-sumob-2via {
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-40deg);
+  font-size: 3rem; /* Ajuste o tamanho do texto conforme necessário */
+  font-weight: 800;
+  color: transparent; /* Cor e opacidade da marca d'água */
+  -webkit-text-stroke: 1px rgba(128, 128, 128, 0.5);
+  z-index: 9999; /* Coloca a marca d'água atrás de outros conteúdos */
+  pointer-events: none; /* Faz com que a marca d'água não seja clicável */
+  user-select: none; /* Evita que o texto da marca d'água seja selecionável */
+}
+.watermark-bhtrans-2via {
+  position: fixed;
+  top: 83%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-40deg);
+  font-size: 3rem; /* Ajuste o tamanho do texto conforme necessário */
+  font-weight: 800;
+  color: transparent; /* Cor e opacidade da marca d'água */
+  -webkit-text-stroke: 1px rgba(128, 128, 128, 0.5);
+  z-index: 9999; /* Coloca a marca d'água atrás de outros conteúdos */
+  pointer-events: none; /* Faz com que a marca d'água não seja clicável */
+  user-select: none; /* Evita que o texto da marca d'água seja selecionável */
+}
+

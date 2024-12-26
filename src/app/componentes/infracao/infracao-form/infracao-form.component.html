@@ -1,0 +1,54 @@
+<div style="margin-top: 20px">
+<mat-card>
+  <form [formGroup]="infracaoForm">
+    <mat-card-content>
+      <ng-container>
+        @if(typeForm() !== 'edit'){
+        <mat-toolbar class="background-toolbar" id="peso-fonte"
+          >Adicionar Infração</mat-toolbar
+        >
+
+        }@else {
+        <mat-toolbar class="background-toolbar" id="peso-fonte"
+          >Alterar Infração</mat-toolbar
+        >}
+      </ng-container>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Código da infração" formControlName="codigoInfracao" />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nome da infração" formControlName="nomeInfracao" />
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <ng-container>
+        @if(typeForm() === 'edit'){
+        <button
+          type="button"
+          id="button-salvar"
+          (click)="onUpdate()"
+          mat-raised-button
+        >
+          Salvar
+        </button>
+        }@else{
+        <button
+          type="button"
+          id="button-salvar"
+          (click)="onNew()"
+          mat-raised-button
+        >
+          Salvar
+        </button>
+        }
+
+        <button type="button" mat-raised-button (click)="voltar()">
+          Cancelar
+        </button>
+      </ng-container>
+    </mat-card-actions>
+  </form>
+</mat-card>
+</div>

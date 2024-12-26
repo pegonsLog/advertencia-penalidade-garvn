@@ -1,0 +1,281 @@
+<div class="container">
+  <mat-card>
+    <form [formGroup]="irregularidadeForm">
+      <mat-card-content>
+        <ng-container>
+          <!-- @if(typeForm() !== 'edit'){
+          <mat-toolbar class="background-toolbar" id="peso-fonte"
+            >Adicionar Irregularidade</mat-toolbar
+          >
+
+          }@else { -->
+          <mat-toolbar class="background-toolbar" id="peso-fonte"
+            >Alterar Irregularidade</mat-toolbar
+          >
+        <!-- } -->
+        </ng-container>
+
+        <div class="linha1">
+          <!-- @if(typeForm() !== 'edit'){
+          <mat-form-field class="numero">
+            <input
+              matInput
+              placeholder="Número"
+              formControlName="numeroIrregularidade"
+              tabindex="1"
+            />
+          </mat-form-field>
+          }@else{ -->
+          <mat-form-field class="numero">
+            <mat-label>Nº Advertência</mat-label>
+            <input
+              matInput
+              placeholder="Número"
+              formControlName="numeroIrregularidade"
+              tabindex="-1"
+              readonly="true"
+            />
+          </mat-form-field>
+          <!-- } -->
+          <mat-form-field class="data">
+            <mat-label>Data</mat-label>
+            <input
+              matInput
+              placeholder="Data"
+              formControlName="dataIrregularidade"
+              mask="d0/M0/0000"
+              [dropSpecialCharacters]="false"
+              tabindex="2"
+            />
+          </mat-form-field>
+          <mat-form-field class="hora">
+            <mat-label>Hora</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Hora"
+              formControlName="horario"
+              mask="Hh:m0"
+              [dropSpecialCharacters]="false"
+              tabindex="3"
+            />
+          </mat-form-field>
+          <mat-form-field class="matriculaAgente">
+            <mat-label>Mat. Ag.</mat-label>
+            <input
+              matInput
+              placeholder="Mat. Agente"
+              formControlName="matriculaAgente"
+              tabindex="4"
+              (blur)="validarAgente()"
+            />
+          </mat-form-field>
+          <mat-form-field class="nomeAgente">
+            <mat-label>Nome Agente</mat-label>
+            <input
+              matInput
+              readonly="true"
+              value="{{ agenteValidacao }}"
+              tabindex="-1"
+              [ngStyle]="{ color: condicaoValidacaoAgente ? 'black' : 'red' }"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="linha2">
+          <mat-form-field class="local">
+            <mat-label>Local</mat-label>
+            <input
+              matInput
+              placeholder="Local"
+              formControlName="local"
+              tabindex="5"
+            />
+          </mat-form-field>
+          <mat-form-field class="numeroLocal">
+            <mat-label>Nº</mat-label>
+            <input
+              matInput
+              placeholder="Nº"
+              formControlName="numeroLocal"
+              tabindex="6"
+            />
+          </mat-form-field>
+          <mat-form-field class="bairro">
+            <mat-label>Bairro</mat-label>
+            <input
+              matInput
+              placeholder="Bairro"
+              formControlName="bairro"
+              tabindex="7"
+            />
+          </mat-form-field>
+        </div>
+        <div class="linha3">
+          <mat-form-field class="numeroLinha">
+            <mat-label>Nº da linha</mat-label>
+            <input
+              matInput
+              placeholder="Nº Linha"
+              formControlName="numeroLinha"
+              tabindex="9"
+              (blur)="validarLinha()"
+            />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Nome da linha</mat-label>
+            <input
+              matInput
+              readonly="true"
+              value="{{ linhaValidacao }}"
+              tabindex="-1"
+              [ngStyle]="{ color: condicaoValidacaoLinha ? 'black' : 'red' }"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="linha4">
+          <mat-form-field class="infracao">
+            <mat-label>Cód. da infração</mat-label>
+            <input
+              matInput
+              placeholder="Cód. Infração"
+              formControlName="codigoInfracao"
+              tabindex="10"
+              (blur)="validarInfracao()"
+            />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Descrição da infração</mat-label>
+            <input
+              matInput
+              readonly="true"
+              value="{{ infracaoValidacao }}"
+              tabindex="-1"
+              [ngStyle]="{ color: condicaoValidacaoInfracao ? 'black' : 'red' }"
+            />
+          </mat-form-field>
+        </div>
+        <div class="linha5">
+          <mat-form-field class="larguraMaxima">
+            <mat-label>Observações</mat-label>
+            <input
+              matInput
+              placeholder="Observações"
+              formControlName="descricao"
+              tabindex="8"
+            />
+          </mat-form-field>
+        </div>
+        <div class="linha6">
+          <mat-form-field class="numeroVeiculo">
+            <mat-label>Nº do Veículo</mat-label>
+            <input
+              matInput
+              placeholder="Nº Veiculo"
+              formControlName="numeroVeiculo"
+              tabindex="11"
+              (blur)="validarVeiculo()"
+            />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Placa do veículo</mat-label>
+            <input
+              matInput
+              readonly="true"
+              value="{{ veiculoValidacao }}"
+              tabindex="-1"
+              [ngStyle]="{ color: condicaoValidacaoVeiculo ? 'black' : 'red' }"
+            />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Consórcio</mat-label>
+            <input
+              matInput
+              readonly="true"
+              value="{{ consorcioValidacao }}"
+              tabindex="-1"
+              [ngStyle]="{ color: condicaoValidacaoVeiculo ? 'black' : 'red' }"
+            />
+          </mat-form-field>
+
+        </div>
+
+        <!-- <div class="linha7">
+          <mat-form-field class="consorcio">
+            <input
+              matInput
+              placeholder="Nº Consórcio"
+              formControlName="numeroConsorcio"
+              tabindex="12"
+              (blur)="validarConsorcio()"
+            />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Nome do consorcio</mat-label>
+            <input
+              matInput
+              readonly="true"
+              value="{{ consorcioValidacao }}"
+              tabindex="-1"
+              [ngStyle]="{
+                color: condicaoValidacaoConsorcio ? 'black' : 'red'
+              }"
+            />
+          </mat-form-field>
+        </div> -->
+
+        <div class="linha8">
+          <mat-form-field class="matAgenteConferente">
+            <mat-label>Mat. Agente Conferente</mat-label>
+            <input
+              matInput
+              placeholder="Mat. agente conferente"
+              formControlName="matAgenteConferente"
+              tabindex="13"
+            />
+          </mat-form-field>
+          <mat-form-field class="dataEmissao">
+            <mat-label>Data da Emissão</mat-label>
+            <input
+              matInput
+              placeholder="Data Emissão"
+              formControlName="dataEmissao"
+              tabindex="14"
+              mask="d0/M0/0000"
+              [dropSpecialCharacters]="false"
+            />
+          </mat-form-field>
+          <mat-form-field class="prazoCumprimentoConferencia">
+            <mat-label>Prazo de Cumprimento</mat-label>
+            <input
+              matInput
+              placeholder="Prazo Cumprimento/Conferência"
+              formControlName="prazoCumprimentoConferencia"
+              tabindex="15"
+              mask="d0/M0/0000"
+              [dropSpecialCharacters]="false"
+            />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <ng-container>
+
+          <button
+            type="button"
+            id="button-salvar"
+            (click)="onUpdate()"
+            mat-raised-button
+          >
+            Salvar
+          </button>
+              <button type="button" mat-raised-button (click)="voltar()">
+            Cancelar
+          </button>
+        </ng-container>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

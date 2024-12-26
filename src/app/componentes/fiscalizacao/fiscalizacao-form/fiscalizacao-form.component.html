@@ -1,0 +1,62 @@
+<div style="margin-top: 20px">
+<mat-card>
+  <form [formGroup]="fiscalizacaoForm">
+    <mat-card-content>
+      <ng-container>
+        @if(typeForm() !== 'edit'){
+        <mat-toolbar class="background-toolbar"
+          >Adicionar Fiscalização</mat-toolbar
+        >
+
+        }@else {
+        <mat-toolbar class="background-toolbar"
+          >Alterar Fiscalização</mat-toolbar
+        >}
+      </ng-container>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Matrícula do agente" formControlName="matriculaAgente" />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nome do agente" formControlName="nomeAgente" />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Data da emissão" formControlName="dataEmissao" />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Data da conferência
+        " formControlName="dataConferencia" />
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <ng-container>
+        @if(typeForm() === 'edit'){
+        <button
+          type="button"
+          id="button-salvar"
+          (click)="onUpdate()"
+          mat-raised-button
+        >
+          Salvar
+        </button>
+        }@else{
+        <button
+          type="button"
+          id="button-salvar"
+          (click)="onNew()"
+          mat-raised-button
+        >
+          Salvar
+        </button>
+        }
+
+        <button type="button" mat-raised-button (click)="voltar()" >
+          Cancelar
+        </button>
+      </ng-container>
+    </mat-card-actions>
+  </form>
+</mat-card>
+</div>
+

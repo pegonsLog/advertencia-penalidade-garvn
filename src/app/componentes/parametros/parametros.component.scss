@@ -1,0 +1,65 @@
+@media (mix-width: 600px) {
+  mat-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 600px) and (max-width: 2000px) {
+  mat-card {
+    width: 30%;
+    margin: 10% auto;
+    background-color: rgb(230, 237, 240);
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-card-actions {
+  margin: auto;
+}
+
+mat-toolbar,
+button {
+  background-color: rgb(63, 154, 196);
+  margin-bottom: 1em;
+  letter-spacing: 2px;
+}
+
+#peso-fonte {
+  font-size: 1.2rem;
+  font-weight: 300;
+  font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+
+#button-entrar {
+  margin-top: -6px;
+  margin-bottom: 18px;
+  width: 20%;
+  font-size: 0.9rem;
+  font-weight: 300;
+  font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+  background-color: rgb(63, 154, 196);
+}
+
+#centralizar {
+  display: flex;
+  justify-content: right;
+}
+
+.example-headers-align {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.panelConsultar {
+  margin: 0 auto;
+  width: 100%;
+}
+
+mat-panel-title{
+color: rgb(63, 154, 196);
+font-weight: 500;
+}
