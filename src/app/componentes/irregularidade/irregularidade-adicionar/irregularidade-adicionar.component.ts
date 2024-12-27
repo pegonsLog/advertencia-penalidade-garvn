@@ -75,7 +75,7 @@ export class IrregularidadeAdicionarComponent implements OnDestroy {
     numeroVeiculo: ['', Validators.required],
     numeroLinha: ['', Validators.required],
     dataEmissao: [''],
-    prazoCumprimentoConferencia: [''],
+    prazoCumprimentoConferencia: ['', Validators.required],
     matAgenteConferente: [''],
   });
 
