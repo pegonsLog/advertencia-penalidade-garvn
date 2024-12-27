@@ -74,7 +74,7 @@ export class IrregularidadeAlterarComponent {
     numeroVeiculo: ['', Validators.required],
     numeroLinha: ['', Validators.required],
     dataEmissao: [''],
-    prazoCumprimentoConferencia: [''],
+    prazoCumprimentoConferencia: ['', Validators.required],
     matAgenteConferente: [''],
   });
 
@@ -147,7 +147,7 @@ export class IrregularidadeAlterarComponent {
             numeroLinha: [result.numeroLinha, Validators.required],
             dataEmissao: [result.dataEmissao],
             prazoCumprimentoConferencia: [
-              result.prazoCumprimentoConferencia
+              result.prazoCumprimentoConferencia, Validators.required
             ],
             matAgenteConferente: [
               result.matAgenteConferente
@@ -235,7 +235,7 @@ export class IrregularidadeAlterarComponent {
         irregularidadeIIrregularidade.dataEmissao
       ],
       prazoCumprimentoConferencia: [
-        irregularidadeIIrregularidade.prazoCumprimentoConferencia
+        irregularidadeIIrregularidade.prazoCumprimentoConferencia,  Validators.required
       ],
       matAgenteConferente: [
         irregularidadeIIrregularidade.matAgenteConferente
@@ -264,7 +264,7 @@ export class IrregularidadeAlterarComponent {
       numeroVeiculo: ['', Validators.required],
       numeroLinha: ['', Validators.required],
       dataEmissao: [''],
-      prazoCumprimentoConferencia: [''],
+      prazoCumprimentoConferencia: ['', Validators.required],
       matAgenteConferente: [''],
     });
   }

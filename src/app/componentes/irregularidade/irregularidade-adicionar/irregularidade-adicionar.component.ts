@@ -138,7 +138,7 @@ export class IrregularidadeAdicionarComponent implements OnDestroy {
             numeroVeiculo: [result.numeroVeiculo, Validators.required],
             numeroLinha: [result.numeroLinha, Validators.required],
             dataEmissao: [result.dataEmissao],
-            prazoCumprimentoConferencia: [result.prazoCumprimentoConferencia],
+            prazoCumprimentoConferencia: [result.prazoCumprimentoConferencia, Validators.required],
             matAgenteConferente: [result.matAgenteConferente],
           });
           this.validarAgente();
@@ -181,7 +181,7 @@ export class IrregularidadeAdicionarComponent implements OnDestroy {
               numeroVeiculo: ['', Validators.required],
               numeroLinha: ['', Validators.required],
               dataEmissao: [''],
-              prazoCumprimentoConferencia: [''],
+              prazoCumprimentoConferencia: ['', Validators.required],
               matAgenteConferente: [''],
             }));
         });
@@ -247,7 +247,7 @@ export class IrregularidadeAdicionarComponent implements OnDestroy {
       ],
       dataEmissao: [irregularidadeIIrregularidade.dataEmissao],
       prazoCumprimento: [
-        irregularidadeIIrregularidade.prazoCumprimentoConferencia,
+        irregularidadeIIrregularidade.prazoCumprimentoConferencia, Validators.required
       ],
       dataCumprimento: [irregularidadeIIrregularidade.matAgenteConferente],
     });
@@ -274,7 +274,7 @@ export class IrregularidadeAdicionarComponent implements OnDestroy {
       numeroVeiculo: ['', Validators.required],
       numeroLinha: ['', Validators.required],
       dataEmissao: [''],
-      prazoCumprimentoConferencia: [''],
+      prazoCumprimentoConferencia: ['', Validators.required],
       matAgenteConferente: [''],
     });
   }
