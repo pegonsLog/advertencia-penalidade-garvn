@@ -63,7 +63,7 @@ export class IrregularidadeAlterarComponent {
 
   irregularidadeForm: FormGroup = this.#fb.group({
     numeroIrregularidade: ['', Validators.required],
-    dataIrregularidade: ['', Validators.required],
+    dataIrregularidade: ['', Validators.pattern(/^\d{2}\/\d{2}\/\d{4}$/)],
     horario: ['', Validators.required],
     matriculaAgente: ['', Validators.required],
     local: ['', Validators.required],
@@ -73,8 +73,8 @@ export class IrregularidadeAlterarComponent {
     codigoInfracao: ['', Validators.required],
     numeroVeiculo: ['', Validators.required],
     numeroLinha: ['', Validators.required],
-    dataEmissao: [''],
-    prazoCumprimentoConferencia: ['', Validators.required],
+    dataEmissao: ['', Validators.pattern(/^\d{2}\/\d{2}\/\d{4}$/)],
+    prazoCumprimentoConferencia: ['', Validators.pattern(/^\d{2}\/\d{2}\/\d{4}$/)],
     matAgenteConferente: [''],
   });
 
@@ -134,7 +134,7 @@ export class IrregularidadeAlterarComponent {
             ],
             dataIrregularidade: [
               result.dataIrregularidade,
-              Validators.required,
+              Validators.pattern(/^\d{2}\/\d{2}\/\d{4}$/)
             ],
             horario: [result.horario, Validators.required],
             matriculaAgente: [result.matriculaAgente, Validators.required],
@@ -145,9 +145,9 @@ export class IrregularidadeAlterarComponent {
             codigoInfracao: [result.codigoInfracao, Validators.required],
             numeroVeiculo: [result.numeroVeiculo, Validators.required],
             numeroLinha: [result.numeroLinha, Validators.required],
-            dataEmissao: [result.dataEmissao],
+            dataEmissao: [result.dataEmissao, Validators.pattern(/^\d{2}\/\d{2}\/\d{4}$/)],
             prazoCumprimentoConferencia: [
-              result.prazoCumprimentoConferencia, Validators.required
+              result.prazoCumprimentoConferencia, Validators.pattern(/^\d{2}\/\d{2}\/\d{4}$/)
             ],
             matAgenteConferente: [
               result.matAgenteConferente
@@ -206,7 +206,7 @@ export class IrregularidadeAlterarComponent {
       ],
       dataIrregularidade: [
         irregularidadeIIrregularidade.dataIrregularidade,
-        Validators.required,
+        Validators.pattern(/^\d{2}\/\d{2}\/\d{4}$/)
       ],
       horario: [irregularidadeIIrregularidade.horario, Validators.required],
       matriculaAgente: [
@@ -232,10 +232,10 @@ export class IrregularidadeAlterarComponent {
         Validators.required,
       ],
       dataEmissao: [
-        irregularidadeIIrregularidade.dataEmissao
+        irregularidadeIIrregularidade.dataEmissao, Validators.pattern(/^\d{2}\/\d{2}\/\d{4}$/)
       ],
       prazoCumprimentoConferencia: [
-        irregularidadeIIrregularidade.prazoCumprimentoConferencia,  Validators.required
+        irregularidadeIIrregularidade.prazoCumprimentoConferencia, Validators.pattern(/^\d{2}\/\d{2}\/\d{4}$/)
       ],
       matAgenteConferente: [
         irregularidadeIIrregularidade.matAgenteConferente
@@ -253,7 +253,7 @@ export class IrregularidadeAlterarComponent {
         (this.numeroUltimaIrregularidade + 1).toString(),
         Validators.required,
       ],
-      dataIrregularidade: ['', Validators.required],
+      dataIrregularidade: ['', Validators.pattern(/^\d{2}\/\d{2}\/\d{4}$/)],
       horario: ['', Validators.required],
       matriculaAgente: ['', Validators.required],
       local: ['', Validators.required],
@@ -263,8 +263,8 @@ export class IrregularidadeAlterarComponent {
       codigoInfracao: ['', Validators.required],
       numeroVeiculo: ['', Validators.required],
       numeroLinha: ['', Validators.required],
-      dataEmissao: [''],
-      prazoCumprimentoConferencia: ['', Validators.required],
+      dataEmissao: ['', Validators.pattern(/^\d{2}\/\d{2}\/\d{4}$/)],
+      prazoCumprimentoConferencia: ['', Validators.pattern(/^\d{2}\/\d{2}\/\d{4}$/)],
       matAgenteConferente: [''],
     });
   }
