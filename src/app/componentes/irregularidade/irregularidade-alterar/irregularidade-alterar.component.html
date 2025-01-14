@@ -34,6 +34,7 @@
               formControlName="numeroIrregularidade"
               tabindex="-1"
               readonly="true"
+              class="small-placeholder"
             />
           </mat-form-field>
           <!-- } -->
@@ -41,12 +42,13 @@
             <mat-label>Data</mat-label>
             <input
               matInput
-              placeholder="Data*"
+              placeholder="Data* (dd/mm/aaaa)"
               formControlName="dataIrregularidade"
               mask="d0/M0/0000"
               [dropSpecialCharacters]="false"
               tabindex="2"
               required="true"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="hora">
@@ -59,6 +61,7 @@
               mask="Hh:m0"
               [dropSpecialCharacters]="false"
               tabindex="3"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="matriculaAgente">
@@ -69,10 +72,11 @@
               formControlName="matriculaAgente"
               tabindex="4"
               (blur)="validarAgente()"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="nomeAgente">
-            <mat-label>Nome Agente*</mat-label>
+            <mat-label style="font-size: 14px;">Nome Agente*</mat-label>
             <input
               matInput
               readonly="true"
@@ -91,6 +95,7 @@
               placeholder="Local*"
               formControlName="local"
               tabindex="5"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="numeroLocal">
@@ -100,6 +105,7 @@
               placeholder="Nº"
               formControlName="numeroLocal"
               tabindex="6"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="bairro">
@@ -109,6 +115,7 @@
               placeholder="Bairro"
               formControlName="bairro"
               tabindex="7"
+              class="small-placeholder"
             />
           </mat-form-field>
         </div>
@@ -121,10 +128,11 @@
               formControlName="numeroLinha"
               tabindex="9"
               (blur)="validarLinha()"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="full-width">
-            <mat-label>Nome da linha*</mat-label>
+            <mat-label style="font-size: 14px;">Nome da linha*</mat-label>
             <input
               matInput
               readonly="true"
@@ -144,10 +152,12 @@
               formControlName="codigoInfracao"
               tabindex="10"
               (blur)="validarInfracao()"
+              class="small-placeholder"
+
             />
           </mat-form-field>
           <mat-form-field class="full-width">
-            <mat-label>Descrição da infração*</mat-label>
+            <mat-label style="font-size: 14px;">Descrição da infração*</mat-label>
             <input
               matInput
               readonly="true"
@@ -165,6 +175,7 @@
               placeholder="Observações"
               formControlName="descricao"
               tabindex="8"
+              class="small-placeholder"
             />
           </mat-form-field>
         </div>
@@ -177,10 +188,11 @@
               formControlName="numeroVeiculo"
               tabindex="11"
               (blur)="validarVeiculo()"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="full-width">
-            <mat-label>Placa do veículo*</mat-label>
+            <mat-label style="font-size: 14px;">Placa do veículo*</mat-label>
             <input
               matInput
               readonly="true"
@@ -190,7 +202,7 @@
             />
           </mat-form-field>
           <mat-form-field class="full-width">
-            <mat-label>Consórcio*</mat-label>
+            <mat-label style="font-size: 14px;">Consórcio*</mat-label>
             <input
               matInput
               readonly="true"
@@ -234,29 +246,32 @@
               placeholder="Mat. agente conferente"
               formControlName="matAgenteConferente"
               tabindex="13"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="dataEmissao">
             <mat-label>Data da Emissão</mat-label>
             <input
               matInput
-              placeholder="Data Emissão"
+              placeholder="Data Emissão (dd/mm/aaaa)"
               formControlName="dataEmissao"
               tabindex="14"
               mask="d0/M0/0000"
               [dropSpecialCharacters]="false"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="prazoCumprimentoConferencia">
             <mat-label>Prazo de Cumprimento</mat-label>
             <input
               matInput
-              placeholder="Prazo para cumprimento*"
+              placeholder="Prazo para cumprimento* (dd/mm/aaaa)"
               formControlName="prazoCumprimentoConferencia"
               tabindex="15"
               mask="d0/M0/0000"
               [dropSpecialCharacters]="false"
               required="true"
+              class="small-placeholder"
             />
           </mat-form-field>
         </div>

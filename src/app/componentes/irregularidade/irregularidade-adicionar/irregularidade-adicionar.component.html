@@ -17,6 +17,7 @@
         <div class="linha1">
           <!-- @if(typeForm() !== 'edit'){ -->
           <mat-form-field class="numero">
+            <mat-label style="font-size: 14px;">Número</mat-label>
             <input
               matInput
               placeholder="Número"
@@ -24,23 +25,26 @@
               tabindex="1"
               id="numeroNotificacao"
               readonly="true"
+              class="small-placeholder"
             />
-
           </mat-form-field>
 
           <mat-form-field class="data">
+            <mat-label style="font-size: 14px;">Data</mat-label>
             <input
               matInput
-              placeholder="Data*"
+              placeholder="Data* (dd/mm/aaaa)"
               type="text"
               mask="d0/M0/0000"
               [dropSpecialCharacters]="false"
               formControlName="dataIrregularidade"
               tabindex="2"
               required="true"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="hora">
+            <mat-label style="font-size: 14px;">Hora</mat-label>
             <input
               type="text"
               matInput
@@ -49,9 +53,11 @@
               mask="Hh:m0"
               [dropSpecialCharacters]="false"
               tabindex="3"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="matriculaAgente">
+            <mat-label style="font-size: 14px;">Mat. Agente</mat-label>
             <input
               matInput
               placeholder="Mat. Agente*"
@@ -59,9 +65,11 @@
               maxlength="4"
               tabindex="4"
               (blur)="validarAgente()"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="nomeAgente">
+            <mat-label style="font-size: 14px;">Nome do Agente*</mat-label>
             <input
               matInput
               placeholder="Nome do Agente*"
@@ -69,49 +77,58 @@
               value="{{ agenteValidacao }}"
               tabindex="-1"
               [ngStyle]="{ color: condicaoValidacaoAgente ? 'black' : 'red' }"
+              class="small-placeholder"
             />
           </mat-form-field>
         </div>
 
         <div class="linha2">
           <mat-form-field class="local">
+            <mat-label style="font-size: 14px;">Local</mat-label>
             <input
               matInput
               placeholder="Local*"
               formControlName="local"
               tabindex="5"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="numeroLocal">
+            <mat-label style="font-size: 14px;">Nº</mat-label>
             <input
               matInput
               placeholder="Nº"
               formControlName="numeroLocal"
               tabindex="6"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="bairro">
+            <mat-label style="font-size: 14px;">Bairro</mat-label>
             <input
               matInput
               placeholder="Bairro"
               formControlName="bairro"
               tabindex="7"
+              class="small-placeholder"
             />
           </mat-form-field>
         </div>
 
         <div class="linha3">
           <mat-form-field class="numeroLinha">
+            <mat-label style="font-size: 14px;">Nº Linha</mat-label>
             <input
               matInput
               placeholder="Nº Linha*"
               formControlName="numeroLinha"
               tabindex="8"
               (blur)="validarLinha()"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="full-width">
-            <mat-label>Nome da linha*</mat-label>
+            <mat-label style="font-size: 14px;">Nome da linha*</mat-label>
             <input
               matInput
               readonly="true"
@@ -124,16 +141,18 @@
 
         <div class="linha4">
           <mat-form-field class="infracao">
+            <mat-label style="font-size: 14px;">Cód. Infração</mat-label>
             <input
               matInput
               placeholder="Cód. Infração*"
               formControlName="codigoInfracao"
               tabindex="9"
               (blur)="validarInfracao()"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="full-width">
-            <mat-label>Descrição da infração*</mat-label>
+            <mat-label style="font-size: 14px;">Descrição da infração*</mat-label>
             <input
               matInput
               readonly="true"
@@ -145,26 +164,30 @@
         </div>
         <div class="linha5">
           <mat-form-field class="larguraMaxima">
+            <mat-label style="font-size: 14px;">Observações</mat-label>
             <input
               matInput
               placeholder="Observações"
               formControlName="descricao"
               tabindex="10"
+              class="small-placeholder"
             />
           </mat-form-field>
         </div>
         <div class="linha6">
           <mat-form-field class="numeroVeiculo">
+            <mat-label style="font-size: 14px;">Nº Veículo</mat-label>
             <input
               matInput
               placeholder="Nº Veiculo*"
               formControlName="numeroVeiculo"
               tabindex="11"
               (blur)="validarVeiculo()"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="full-width">
-            <mat-label>Placa do veículo*</mat-label>
+            <mat-label style="font-size: 14px;">Placa do veículo*</mat-label>
             <input
               matInput
               readonly="true"
@@ -174,7 +197,7 @@
             />
           </mat-form-field>
           <mat-form-field class="full-width">
-            <mat-label>Consórcio*</mat-label>
+            <mat-label style="font-size: 14px;">Consórcio*</mat-label>
             <input
               matInput
               readonly="true"
@@ -211,32 +234,38 @@
 
         <div class="linha8">
           <mat-form-field class="matAgenteConferente">
+            <mat-label style="font-size: 14px;">Mat. agente conferente</mat-label>
             <input
-            matInput
-            placeholder="Mat. agente conferente"
-            formControlName="matAgenteConferente"
-            tabindex="13"
+              matInput
+              placeholder="Mat. agente conferente"
+              formControlName="matAgenteConferente"
+              tabindex="13"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="dataEmissao">
+            <mat-label style="font-size: 14px;">Data Emissão (dd/mm/aaaa)</mat-label>
             <input
-            matInput
-            placeholder="Data Emissão"
-            formControlName="dataEmissao"
-            tabindex="14"
-            mask="d0/M0/0000"
-            [dropSpecialCharacters]="false"
+              matInput
+              placeholder="Data Emissão (dd/mm/aaaa)"
+              formControlName="dataEmissao"
+              tabindex="14"
+              mask="d0/M0/0000"
+              [dropSpecialCharacters]="false"
+              class="small-placeholder"
             />
           </mat-form-field>
           <mat-form-field class="dataConferencia">
+            <mat-label style="font-size: 14px;">Prazo para cumprimento (dd/mm/aaaa)</mat-label>
             <input
               matInput
-              placeholder="Prazo para cumprimento*"
+              placeholder="Prazo para cumprimento* (dd/mm/aaaa)"
               formControlName="prazoCumprimentoConferencia"
               tabindex="15"
               mask="d0/M0/0000"
               [dropSpecialCharacters]="false"
               required="true"
+              class="small-placeholder"
             />
           </mat-form-field>
         </div>
